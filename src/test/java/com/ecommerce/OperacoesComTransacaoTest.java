@@ -44,7 +44,7 @@ public class OperacoesComTransacaoTest extends EntityManagerTest {
     @Test
     public void inserirPrimeiroObjeto(){
         Produto produto = new Produto();
-        produto.setId(3);
+        //produto.setId(3);
         produto.setNome("Camera Canon aaaa");
         produto.setPreco(new BigDecimal(329.0));
         produto.setDescricao("Certamente é uma camera");
