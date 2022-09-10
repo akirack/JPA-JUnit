@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MavenJPA" />
+        <module name="JPA-JUnit-master" />
       </profile>
     </annotationProcessing>
   </component>

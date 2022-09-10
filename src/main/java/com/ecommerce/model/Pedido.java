@@ -3,11 +3,13 @@ package com.ecommerce.model;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,6 +22,9 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToOne
+    private Cliente cliente;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
@@ -37,4 +42,7 @@ public class Pedido {
 
     @Embedded
     private EnderecoEntregaPedido enderecoEntregaPedido;
+
+    @OneToMany(mappedBy="pedido")
+    private List<ItemPedido> itemPedido;
 }
